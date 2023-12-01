@@ -1,38 +1,105 @@
-.App {
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: rgb(255,245,238);
+  color: rgb(32, 42, 68);
+}
+
+header {
+  /* background-image: url('./images/bookshelf.jpg'); */
+  background-color: rgb(103, 49, 71);
+  /* height: 100px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; */
+  color: white;
   text-align: center;
+  padding: 1rem;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+header button {
+  background-color: rgb(103, 49, 71);
+  color: white;
+  border: 1px solid black;
+  box-shadow: 0 0 5px black;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+header button:hover {
+  background-color: rgb(82, 38, 56);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.search-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.books-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.book {
+  background-color: rgb(103, 49, 71);
+  color: white;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 10px;
+  width: 200px;
+  height: 250px;
+  box-shadow: 0 0 5px rgb(103, 49, 71);
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+  overflow: hidden;
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  text-align: center;
 }
 
-.App-link {
-  color: #61dafb;
+.book h3{
+  margin: 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.book h3 {
+  font-size: 1.2em;
 }
+.book p {
+  font-size: 0.9em;
+}
+
+.book:hover {
+  transform: scale(1.05);
+}
+
+.book .details {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow-y: auto;
+}
+
+.book.open .details {
+  display: block;
+  background-color: rgb(255,245,238);
+  color: rgb(32, 42, 68);
+  padding: 10px;
+}
+
